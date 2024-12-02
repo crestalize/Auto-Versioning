@@ -1,6 +1,6 @@
 name: 'Auto Versioning'
 description: 'Get a new version tag for your next release.'
-author: 'Soumeh'
+author: 'Crestalize'
 inputs:
   token:
     description: GitHub Personal Access Token. Auto Populated.

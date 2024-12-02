@@ -1,6 +1,6 @@
 # Auto-Versioning
 
-<img src="https://img.shields.io/github/workflow/status/Soumeh/Auto-Versioning/Integration%20Test">
+<img src="https://img.shields.io/github/workflow/status/Crestalize/Auto-Versioning/Integration%20Test">
 
 Automatic versioning based on existing releases and commit changes.
 
@@ -15,7 +15,7 @@ To generate versioning data, add a new step inside of your workflow:
 ```yml
   - name: Gen Versioning Data
     id: versioning
-    uses: Soumeh/Auto-Versioning@main
+    uses: Crestalize/Auto-Versioning@main
 ```
 
 To get (and use) the versioning data, you have to use the magic Github keyword `${{ steps.(id).outputs.(output) }}`, Where (id) is the `id` value in the above step, and (output) is one of the values below:
@@ -63,7 +63,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Get Versioning Data
         id: versioning
-        uses: Soumeh/Auto-Versioning@main
+        uses: Crestalize/Auto-Versioning@main
       - name: Create Release
         uses: meeDamian/github-release@2.0
         with:
