@@ -38,6 +38,10 @@ branding:
 runs:
   using: "composite"
   steps:
+  - name: Set up Python
+    uses: actions/setup-python@v4
+    with:
+      python-version: '3.x'
   - run: python3 -m pip install -r ${{ github.action_path }}/requirements.txt
     shell: bash
   - id: logic
