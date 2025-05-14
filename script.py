@@ -2,7 +2,6 @@ from sys import argv
 from requests import get
 from json import loads, dumps
 
-
 def parse_changes(files: list, map: dict) -> bool:
     changelog = {"added": [], "renamed": [], "removed": [], "modified": []}
     nums = ()
@@ -33,13 +32,18 @@ if __name__ == '__main__':
 
     token, repo, change_map, separator, commits = argv[1:]
 
-    commits = loads(commits.replace('\\n', '').replace("'", "\\'"))
+    commits = commits.replace('\\n', '').replace("'", "\\'").replace('\\', '\\\\')
+    commits = loads(commits)
     change_map = loads(change_map.replace('\\n', '').replace("'", "\\'"))
 
     files = []
     commit_messages = []
     for commit in commits:
         data = get_data(f'https://api.github.com/repos/{repo}/commits/{commit["id"]}', token)
+
+        print(data)
+
+        exit(0)
         if 'files' in data:
             for file in data['files']:
                 files.append(file)
