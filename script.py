@@ -33,7 +33,7 @@ if __name__ == '__main__':
 
     token, repo, change_map, separator, commits = argv[1:]
 
-    commits = loads(commits)
+    commits = loads(commits.replace('\\n', '').replace("'", "\\'"))
     change_map = loads(change_map.replace('\\n', '').replace("'", "\\'"))
 
     files = []
