@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
-      - name: Test
+      - name: Test Crestalize/Auto-Versioning
         id: versioning
         uses: Crestalize/Auto-Versioning@main
       - name: Verify
