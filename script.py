@@ -42,10 +42,7 @@ if __name__ == '__main__':
     commit_messages = []
     for commit in commits:
         data = get_data(f'https://api.github.com/repos/{repo}/commits/{commit["id"]}', token)
-
-        print(data)
-
-        exit(0)
+        
         if 'files' in data:
             for file in data['files']:
                 files.append(file)
