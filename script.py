@@ -32,9 +32,8 @@ if __name__ == '__main__':
 
     token, repo, change_map, separator, commits = argv[1:]
 
-    commits = commits.replace('\\n', '').replace("'", "\\'").replace('\\', '\\\\')
-    commits = loads(commits)
-    change_map = loads(change_map.replace('\\n', '').replace("'", "\\'"))
+    commits  = loads( commits.replace('\\n', ''))
+    change_map = loads(change_map.replace('\\n', ''))
 
     files = []
     commit_messages = []
