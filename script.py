@@ -29,14 +29,16 @@ def add_to_tag(tag: list, index: int) -> list:
 
 
 if __name__ == '__main__':
-
     token, repo, change_map, separator, commits = argv[1:]
 
     commits = loads(commits)
+
     if isinstance(commits, str):
         commits = loads(commits)
 
-    change_map = loads(change_map.replace('\\n', ''))
+    change_map = loads(change_map)
+    if isinstance(change_map, str):
+        change_map = loads(change_map)
 
     files = []
     commit_messages = []
